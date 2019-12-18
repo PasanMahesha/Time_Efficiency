@@ -142,23 +142,26 @@ public class TimeEfficiency extends javax.swing.JFrame {
         while (array1[Math.min(step, arrsize) - 1] < input) {
             prev = step;
             step += (int) Math.floor(Math.sqrt(arrsize));
-            if (prev >= arrsize) {DS
-                return -1;
+            if (prev >= arrsize){; 
+                return 0;}
             }
 
-        }
+        
         while (array1[prev] < input) {
             prev++;
-            if (prev == Math.min(step, arrsize))
+            if (prev == Math.min(step, arrsize)){
+                
             return -1;
+            }
             
         }
         if (array1[prev] == input) {
+            
             return -1;
         }
-        //}   
-
+          
         return 0;
+        
 
     }
 
@@ -167,6 +170,7 @@ public class TimeEfficiency extends javax.swing.JFrame {
         int arrsize = Integer.valueOf(jTextField1.getText());
         long Time1 = System.nanoTime();
         int result = jump2(array1, input, arrsize);
+        System.out.println(result);
         long Time2 = System.nanoTime();
         long Time = Time2 - Time1;
         if (result == 0) {
